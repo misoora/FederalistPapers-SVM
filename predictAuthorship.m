@@ -4,7 +4,7 @@ function [] = predictAuthorship(w,gam,test,features)
 
 [numPapers,n] = size(test);
 for i=1:numPapers
-  x = test(i,1:n)';
+  x = test(i,features)';
   margin = (w'*x - gam);
   if (margin > 0) % madison paper
   fprintf('Paper #%d\tPredicted Author: Madison\tMargin: %d\n',i,margin);

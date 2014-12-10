@@ -1,5 +1,5 @@
 [train,tune,test,dataDim] = getFederalistData();
-features = 1:70;
+features = 1;
 mu = [0 .001 .01 .1 1 10 100];
 
 for i=1:size(mu,2)
@@ -14,7 +14,7 @@ for i=1:size(mu,2)
     fprintf('Train Correct Classification: %d\n',correct_Train);
     fprintf('Train Wrong Classification: %d\n\n',wrong_Train);
     fprintf('Tune Correct Classification: %d\n',correct_Tune);
-    fprintf('Train Wrong Classification: %d\n\n',wrong_Tune);
+    fprintf('Tune Wrong Classification: %d\n\n',wrong_Tune);
     
     predictAuthorship(w,gam,test,features);
 end
