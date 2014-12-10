@@ -17,6 +17,6 @@ cvx_begin quiet
         z >= 0;
 cvx_end
 objective = cvx_optval;
-
+w = postProcess(w);
 end
 

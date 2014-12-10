@@ -1,10 +1,9 @@
 [train,tune,test,dataDim] = getFederalistData();
-features = 1;
+features = 1:70;
 mu = [0 .001 .01 .1 1 10 100];
 
 for i=1:size(mu,2)
     [w,gam,objective] = separateQP(train,features,mu(i));
-    w = postProcess(w);
     [correct_Train,wrong_Train] = discrim(w,gam,train,features);
     [correct_Tune,wrong_Tune] = discrim(w,gam,tune,features);
     fprintf('%%%%%%%%%%%%%% MU = %d\n',mu(i));
