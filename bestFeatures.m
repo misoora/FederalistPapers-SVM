@@ -1,4 +1,4 @@
-function features = bestFeatures(train,tune,features,mu)
+function [bestAttributes,bestW,bestGam,leastNumWrong] = bestFeatures(train,tune,features,mu)
 %bestFeatures 
 %   returns the best 2 features based on minimizing misclassifications
 
