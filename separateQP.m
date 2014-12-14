@@ -1,8 +1,9 @@
 function [w,gam,objective] = separateQP(dataMat,features,mu)
 %separateQP Solves the problem
-%   Detailed explanation goes here
+%   dataMat = train matrix
 
-[H,M] = parsePapers(dataMat,features);
+
+[H,M] = parsePapers(dataMat,features); %returns sets H,M
 [h,n] = size(H);
 m = size(M,1);
 e_h = ones(h,1);

@@ -13,8 +13,8 @@ for i=1:size(features,2)
     if (numWrong <= leastNumWrong)
        if (numWrong < leastNumWrong || norm(w) < norm(bestW))
         fprintf('attributes:\t%d;',features(i));
-        fprintf('\tmisclassified:\t%d;',numWrong);
-        fprintf('\tnorm(w)= %d\n',norm(w));
+        fprintf('\tmisclassified:\t%d;\t',numWrong);
+        disp(['norm(w) = ' num2str(norm(w))]);
         bestW = w;
         bestGam = gam;
         leastNumWrong = numWrong;
